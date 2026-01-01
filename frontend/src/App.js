@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { 
-  Phone, 
-  MessageCircle, 
-  MapPin, 
-  Clock, 
-  Star, 
-  Menu, 
-  X, 
-  Scissors, 
-  Award, 
-  Shield, 
+import {
+  Phone,
+  MessageCircle,
+  MapPin,
+  Clock,
+  Star,
+  Menu,
+  X,
+  Scissors,
+  Award,
+  Shield,
   Sparkles,
   ChevronRight,
   Quote,
@@ -168,7 +168,7 @@ function HeroSection() {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto" data-testid="hero-description">
-            Step into luxury at Abdul D International Barber. Where precision meets style, 
+            Step into luxury at Abdul D International Barber. Where precision meets style,
             and every haircut is a masterpiece. Available 24/7 in the heart of Abuja.
           </p>
 
@@ -231,13 +231,13 @@ function AboutSection() {
               More Than Just a <span className="gold-text">Haircut</span>
             </h2>
             <p className="text-gray-400 text-lg mb-6" data-testid="about-description">
-              At Abdul D International Barber, we believe every man deserves to look and feel his best. 
-              Located in the prestigious Exclusive Serene Hotel, we offer a luxury grooming experience 
+              At Abdul D International Barber, we believe every man deserves to look and feel his best.
+              Located in the prestigious Exclusive Serene Hotel, we offer a luxury grooming experience
               that combines traditional barbering skills with modern techniques.
             </p>
             <p className="text-gray-400 text-lg mb-8">
-              Our commitment to excellence, hygiene, and customer satisfaction has earned us a 
-              stellar 4.9-star rating from our valued clients. Whether you need a quick trim or 
+              Our commitment to excellence, hygiene, and customer satisfaction has earned us a
+              stellar 4.9-star rating from our valued clients. Whether you need a quick trim or
               a complete transformation, we're here for you—24 hours a day, 7 days a week.
             </p>
 
@@ -390,7 +390,7 @@ function GallerySection() {
         <div className="text-center mt-12">
           <p className="text-gray-400 mb-4">Follow us for more</p>
           <a
-            href="#"
+            href="https://www.instagram.com"
             className="btn-outline-gold px-6 py-3 rounded-full inline-flex items-center space-x-2"
             data-testid="gallery-instagram"
           >
@@ -414,7 +414,7 @@ function ReviewsSection() {
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4" data-testid="reviews-title">
             What Our <span className="gold-text">Clients Say</span>
           </h2>
-          
+
           {/* Rating Summary */}
           <div className="flex items-center justify-center space-x-4 mt-6" data-testid="reviews-summary">
             <div className="flex">
@@ -451,7 +451,7 @@ function ReviewsSection() {
         {/* Google Reviews Link */}
         <div className="text-center mt-12">
           <a
-            href="#"
+            href="https://share.google/s3ESJeLqLGiXXyDme"
             className="text-gold-500 hover:text-gold-400 inline-flex items-center space-x-2"
             data-testid="reviews-google-link"
           >
@@ -472,14 +472,14 @@ function ContactSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitStatus('sending');
-    
+
     try {
       const response = await fetch(`${BACKEND_URL}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-      
+
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ name: '', phone: '', message: '' });
@@ -604,7 +604,7 @@ function ContactSection() {
               >
                 {submitStatus === 'sending' ? 'Sending...' : 'Send Message'}
               </button>
-              
+
               {submitStatus === 'success' && (
                 <p className="text-green-500 text-center" data-testid="contact-success">Thank you! We'll contact you shortly.</p>
               )}
@@ -670,10 +670,10 @@ function Footer() {
               <p>{BUSINESS.hours}</p>
             </div>
             <div className="flex space-x-4 mt-4">
-              <a href="#" className="text-gray-400 hover:text-gold-500" data-testid="footer-instagram">
+              <a href="https://instagram.com" className="text-gray-400 hover:text-gold-500" data-testid="footer-instagram">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-gold-500" data-testid="footer-facebook">
+              <a href="https://facebook.com" className="text-gray-400 hover:text-gold-500" data-testid="footer-facebook">
                 <Facebook className="w-5 h-5" />
               </a>
               <a href={`mailto:info@abduldbarber.com`} className="text-gray-400 hover:text-gold-500" data-testid="footer-email">
@@ -726,10 +726,10 @@ function App() {
 
   return (
     <div className="App" data-testid="app">
-      <Navbar 
-        isScrolled={isScrolled} 
-        mobileMenuOpen={mobileMenuOpen} 
-        setMobileMenuOpen={setMobileMenuOpen} 
+      <Navbar
+        isScrolled={isScrolled}
+        mobileMenuOpen={mobileMenuOpen}
+        setMobileMenuOpen={setMobileMenuOpen}
       />
       <HeroSection />
       <AboutSection />
